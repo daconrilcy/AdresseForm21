@@ -86,3 +86,4 @@ export const miniInput = {
     inputCityTagName: 2
 
 }
+export const classShow = "show";

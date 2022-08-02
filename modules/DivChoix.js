@@ -4,7 +4,7 @@ import {
     divZipCodeName, divParenttZipCodeChoixName, tagsNamesGeoChild, FieldsNameGeoJson, typageZipCodeChoix,
     tagsNamesAddressChild, FiedsNamesAddressJson, typageAddressChoix, divTagType,
     typageCityChoix,
-    NbMaxAddressReturnJson, NbMaxZipCodeReturnJson, NbMaxCityReturnJson
+    NbMaxAddressReturnJson, NbMaxZipCodeReturnJson, NbMaxCityReturnJson, classShow
 } from './FormConst.js'
 
 const DivManagement = class{
@@ -54,8 +54,8 @@ const DivManagement = class{
     }
     getId(){return this.#div.id;}
 
-    show(){this.addClass("show");}
-    hide(){this.removeClass("show");}
+    show(){this.addClass(classShow);}
+    hide(){this.removeClass(classShow);}
 }
 
 const DivChoixParent = class extends DivManagement {
