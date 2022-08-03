@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0"
+  },
+  "name": "adressform",
+  "description": "**<h1>Address Form</h1>**\r <p>code javascript permettant le preremplissage de formulaire d'adresse en utilisation les API gouv.fr</p>\r <h2>Requirements</h2>\r <h3>formulaire d'adresse</h3>\r <strong>inputs:</strong><br>\r <p>-input de saisie d'adresse<br>\r -input de reference d'adresse (hidden)<br>\r -input de no d'adresse (hidden)<br>\r -input de nom de rue d'adresse (hidden)<br>\r -input de latitude (hidden)<br>\r -input de longitude (hidden)</p>\r <p>-input de saisie de code Postal</p>\r <p>-input de code ville (hidden)<br>\r -input de saisie de ville</p>\r <strong>Tags:</strong><br>\r Tous les inputs doivent avoir un tag \"data-name\" renseigné avec une id unique:<br>\r Les inputs non \"hidden\" (donc visibles) doivent également avoir un tag \"data-auto\" renseigné à false par default<br>\r <br>\r <strong>Constantes:</strong><br>\r toutes les nom d'inputs unique doivent être reportés dans les constantes prévues à cet effet dans le fichier FormConst.js<br>\r Ce fichiers regroupant toutes les constantes sert également à renseigné les noms des différentes classes des éléments de la form, les nom des tags, etc.\r Les id & name des inputs restent donc libres, les classes sont libres également à partir du moment ou elles sont renseignées dans les fichiers de constantes.</br>\r <br>\r L'affichage des choix d'adresse s'appuient sur des divs géré par default avec bootstrap. <br>\r Il y a donc un div parent avec une classe \"dropdown-menu\" qui se manage en ajoutant ou en supprimant la valeur \"show\".<br>\r En respectant la methodologie (affichage/masquage par la classe) le choix des noms de classes reste libre, à partir du moment ou il est renseigné dans le fichier FormConst.js.",
+  "version": "2.1.0",
+  "main": "src/js/script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daconrilcy/AdresseForm21.git"
+  },
+  "keywords": [
+    "fill",
+    "form",
+    "adress",
+    "automatic",
+    "api",
+    "gouv",
+    "fr"
+  ],
+  "author": "le conda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daconrilcy/AdresseForm21/issues"
+  },
+  "homepage": "https://github.com/daconrilcy/AdresseForm21#readme"
+}
