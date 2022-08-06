@@ -32,28 +32,6 @@ export const inputTagAuto =                 'data-auto';
 export const inputTagName =                 'data-name';
 export const divTagType =                   'data-type';
 
-/****************** Childs Tags *******************************/
-export const tagsNamesAddressChild =        {
-    id: 'data-id',
-    no: 'data-no',
-    street: 'data-street',
-    zipcode: 'data-zipcode',
-    codecity:'data-codecity',
-    city:'data-city',
-    lon:'data-lon',
-    lat:'data-lat',
-    short:'data-short',
-    long:'text'
-};
-
-export const tagsNamesGeoChild =            {
-    zipcode:'data-zipcode',
-    codecity:'data-codecity',
-    city:'data-city',
-    departcode:'data-departcode',
-    departnom: 'data-departnom',
-};
-
 /****************** Fields Json *******************************/
 export const FiedsNamesAddressJson =        {
     id:'id',
@@ -282,13 +260,11 @@ const divParentCityChoix = class extends DivChoixParent {
 class DivChoixChild extends DivManagement {
     typeChild;
     jsonStruct = {};
-    tagNamesStruct = {};
     #datas;
     #textContent;
-    constructor(id='',parentName, typeChild, tagNamesStruct = {}, jsonStruct ={}) {
+    constructor(id='',parentName, typeChild, jsonStruct ={}) {
         super(id, parentName, classNameDivChild);
         this.typeChild = typeChild;
-        this.tagNamesStruct = tagNamesStruct;
         this.jsonStruct = jsonStruct;
         this.#datas = {};
         this.#textContent = '';
@@ -317,17 +293,17 @@ class DivChoixChild extends DivManagement {
 }
 
 class divChoixAdressChild   extends     DivChoixChild {
-    constructor(){ super('',divParentAddressChoixName,typageAddressChoix, tagsNamesAddressChild, FiedsNamesAddressJson); }
+    constructor(){ super('',divParentAddressChoixName,typageAddressChoix, FiedsNamesAddressJson); }
     setTextFromAddres(address){this.setTextContent(address.long);}
 }
 
 class divChoixZipCodeChild  extends     DivChoixChild {
-    constructor(){super('',divParenttZipCodeChoixName, typageZipCodeChoix, tagsNamesGeoChild, FieldsNameGeoJson);}
+    constructor(){super('',divParenttZipCodeChoixName, typageZipCodeChoix, FieldsNameGeoJson);}
     setTextFromAddres(address){this.setTextContent(address[FieldsNameGeoJson.city]);}
 }
 
 class divChoixCityChild     extends     DivChoixChild {
-    constructor() {super('',divParentCityChoixName, typageCityChoix, tagsNamesGeoChild, FieldsNameGeoJson);}
+    constructor() {super('',divParentCityChoixName, typageCityChoix, FieldsNameGeoJson);}
     setTextFromAddres(address){
         let TextAffich = address[FieldsNameGeoJson.city] + " ("+address[FieldsNameGeoJson.zipcode]+"), " + address[FieldsNameGeoJson.departnom];
         this.setTextContent(TextAffich);}

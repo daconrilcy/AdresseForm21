@@ -7,7 +7,7 @@ function minifyJS(){
     return src('src/js/*.js')
         .pipe(sourcemaps.init())
         .pipe(terser())
-        .pipe(concat('formaddress.js'))
+        .pipe(concat('formaddress.min.js'))
         .pipe(sourcemaps.write('./'))
         .pipe(dest('dist/assets/js'));
 }
